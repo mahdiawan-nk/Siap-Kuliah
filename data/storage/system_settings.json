@@ -1,0 +1,37 @@
+[
+  {
+    "id": "set-1",
+    "settingKey": "default_attendance_min_percentage",
+    "settingValue": "75",
+    "updatedBy": "u-admin",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  },
+  {
+    "id": "set-2",
+    "settingKey": "default_qr_interval_seconds",
+    "settingValue": "5",
+    "updatedBy": "u-admin",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  },
+  {
+    "id": "set-3",
+    "settingKey": "default_late_tolerance_minutes",
+    "settingValue": "15",
+    "updatedBy": "u-admin",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  },
+  {
+    "id": "set-4",
+    "settingKey": "sks_minutes_per_credit",
+    "settingValue": "50",
+    "updatedBy": "u-admin",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  },
+  {
+    "id": "set-5",
+    "settingKey": "institution_name",
+    "settingValue": "Universitas Teknologi Nusantara",
+    "updatedBy": "u-admin",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  }
+]

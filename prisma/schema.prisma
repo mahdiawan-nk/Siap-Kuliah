@@ -1,0 +1,535 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// -------------------------------------------------------------
+// 1. users
+// -------------------------------------------------------------
+model User {
+  id           String      @id @default(uuid())
+  username     String      @unique
+  passwordHash String      @map("password_hash")
+  status       String      @default("ACTIVE") // ACTIVE, SUSPENDED, INACTIVE
+  lastLoginAt  DateTime?   @map("last_login_at")
+  createdAt    DateTime    @default(now()) @map("created_at")
+  updatedAt    DateTime    @updatedAt @map("updated_at")
+
+  userRoles           UserRole[]
+  lecturerProfile     Lecturer?
+  studentProfile      Student?
+  createdSessions     AttendanceSession[]     @relation("CreatedSessions")
+  submittedLectures   LectureRealization[]    @relation("SubmittedLectures")
+  statusHistoryChanges AttendanceStatusHistory[] @relation("ChangedBy")
+  correctionLogs      AttendanceCorrectionLog[] @relation("CorrectionChangedBy")
+  evaluationsCreated  CourseEvaluation[]      @relation("EvaluationsCreated")
+  followUpsSubmitted  EvaluationFollowUp[]    @relation("FollowUpsSubmitted")
+  auditLogs           AuditLog[]              @relation("ActorAuditLogs")
+  settingsUpdated     SystemSetting[]         @relation("SettingsUpdated")
+  correctionRequests  AttendanceCorrectionRequest[] @relation("StudentCorrectionRequests")
+  reviewedRequests    AttendanceCorrectionRequest[] @relation("ReviewedCorrectionRequests")
+
+  @@map("users")
+}
+
+// -------------------------------------------------------------
+// 2. roles
+// -------------------------------------------------------------
+model Role {
+  id          String   @id @default(uuid())
+  code        String   @unique // ADMINISTRATOR, KAPRODI, DOSEN, MAHASISWA
+  name        String
+  description String?
+
+  userRoles       UserRole[]
+  rolePermissions RolePermission[]
+
+  @@map("roles")
+}
+
+// -------------------------------------------------------------
+// 3. permissions
+// -------------------------------------------------------------
+model Permission {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  description String?
+
+  rolePermissions RolePermission[]
+
+  @@map("permissions")
+}
+
+// -------------------------------------------------------------
+// 4. user_roles
+// -------------------------------------------------------------
+model UserRole {
+  userId String @map("user_id")
+  roleId String @map("role_id")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@id([userId, roleId])
+  @@map("user_roles")
+}
+
+// -------------------------------------------------------------
+// 5. role_permissions
+// -------------------------------------------------------------
+model RolePermission {
+  roleId       String @map("role_id")
+  permissionId String @map("permission_id")
+
+  role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+  @@map("role_permissions")
+}
+
+// -------------------------------------------------------------
+// 6. study_programs
+// -------------------------------------------------------------
+model StudyProgram {
+  id             String  @id @default(uuid())
+  code           String  @unique // e.g. TIF, SIK, IF
+  name           String
+  headLecturerId String? @map("head_lecturer_id")
+
+  lecturers      Lecturer[]
+  students       Student[]
+  courses        Course[]
+  classes        Class[]
+  evaluations    CourseEvaluation[]
+
+  @@map("study_programs")
+}
+
+// -------------------------------------------------------------
+// 7. lecturers
+// -------------------------------------------------------------
+model Lecturer {
+  id               String       @id @default(uuid())
+  userId           String       @unique @map("user_id")
+  nidn             String?      @unique
+  nip              String?      @unique
+  fullName         String       @map("full_name")
+  studyProgramId   String       @map("study_program_id")
+  employmentStatus String       @default("TETAP") @map("employment_status") // TETAP, KONTRAK, LUAR_BIASA
+
+  user             User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  studyProgram     StudyProgram @relation(fields: [studyProgramId], references: [id])
+  assignments      LecturerAssignment[]
+  evaluationsReceived CourseEvaluation[] @relation("LecturerEvaluations")
+
+  @@map("lecturers")
+}
+
+// -------------------------------------------------------------
+// 8. students
+// -------------------------------------------------------------
+model Student {
+  id               String       @id @default(uuid())
+  userId           String       @unique @map("user_id")
+  nim              String       @unique
+  fullName         String       @map("full_name")
+  studyProgramId   String       @map("study_program_id")
+  cohortYear       Int          @map("cohort_year")
+  academicStatus   String       @default("AKTIF") @map("academic_status") // AKTIF, CUTI, LULUS, NON_AKTIF
+
+  user             User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  studyProgram     StudyProgram @relation(fields: [studyProgramId], references: [id])
+  enrollments      ClassEnrollment[]
+  attendanceRecords AttendanceRecord[]
+
+  @@map("students")
+}
+
+// -------------------------------------------------------------
+// 9. academic_years
+// -------------------------------------------------------------
+model AcademicYear {
+  id        String     @id @default(uuid())
+  name      String     // e.g. 2025/2026
+  startDate DateTime   @map("start_date")
+  endDate   DateTime   @map("end_date")
+  isActive  Boolean    @default(false) @map("is_active")
+
+  semesters Semester[]
+
+  @@map("academic_years")
+}
+
+// -------------------------------------------------------------
+// 10. semesters
+// -------------------------------------------------------------
+model Semester {
+  id             String       @id @default(uuid())
+  academicYearId String       @map("academic_year_id")
+  term           String       // GANJIL, GENAP, PENDEK
+  startDate      DateTime     @map("start_date")
+  endDate        DateTime     @map("end_date")
+  isActive       Boolean      @default(false) @map("is_active")
+
+  academicYear   AcademicYear @relation(fields: [academicYearId], references: [id], onDelete: Cascade)
+  classes        Class[]
+
+  @@map("semesters")
+}
+
+// -------------------------------------------------------------
+// 11. courses
+// -------------------------------------------------------------
+model Course {
+  id             String       @id @default(uuid())
+  code           String       @unique
+  name           String
+  creditsSks     Int          @map("credits_sks")
+  studyProgramId String       @map("study_program_id")
+
+  studyProgram   StudyProgram @relation(fields: [studyProgramId], references: [id])
+  classes        Class[]
+
+  @@map("courses")
+}
+
+// -------------------------------------------------------------
+// 12. classes
+// -------------------------------------------------------------
+model Class {
+  id             String       @id @default(uuid())
+  code           String       // e.g. TI-3A, IF-4B
+  courseId       String       @map("course_id")
+  semesterId     String       @map("semester_id")
+  studyProgramId String       @map("study_program_id")
+
+  course         Course       @relation(fields: [courseId], references: [id])
+  semester       Semester     @relation(fields: [semesterId], references: [id])
+  studyProgram   StudyProgram @relation(fields: [studyProgramId], references: [id])
+
+  enrollments        ClassEnrollment[]
+  lecturerAssignments LecturerAssignment[]
+  schedules          Schedule[]
+  attendanceSessions AttendanceSession[]
+  evaluations        CourseEvaluation[]
+
+  @@unique([code, courseId, semesterId])
+  @@map("classes")
+}
+
+// -------------------------------------------------------------
+// 13. class_enrollments
+// -------------------------------------------------------------
+model ClassEnrollment {
+  id               String   @id @default(uuid())
+  classId          String   @map("class_id")
+  studentId        String   @map("student_id")
+  enrollmentStatus String   @default("ENROLLED") @map("enrollment_status") // ENROLLED, DROPPED, AUDIT
+
+  class            Class    @relation(fields: [classId], references: [id], onDelete: Cascade)
+  student          Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([classId, studentId])
+  @@map("class_enrollments")
+}
+
+// -------------------------------------------------------------
+// 14. lecturer_assignments
+// -------------------------------------------------------------
+model LecturerAssignment {
+  id             String   @id @default(uuid())
+  classId        String   @map("class_id")
+  lecturerId     String   @map("lecturer_id")
+  assignmentType String   @default("PRIMARY") @map("assignment_type") // PRIMARY, TEAM_TEACHING, ASISTEN
+
+  class          Class    @relation(fields: [classId], references: [id], onDelete: Cascade)
+  lecturer       Lecturer @relation(fields: [lecturerId], references: [id], onDelete: Cascade)
+
+  schedules          Schedule[]
+  attendanceSessions AttendanceSession[]
+
+  @@unique([classId, lecturerId])
+  @@map("lecturer_assignments")
+}
+
+// -------------------------------------------------------------
+// 15. rooms
+// -------------------------------------------------------------
+model Room {
+  id   String @id @default(uuid())
+  code String @unique
+  name String
+
+  schedules Schedule[]
+
+  @@map("rooms")
+}
+
+// -------------------------------------------------------------
+// 16. schedules
+// -------------------------------------------------------------
+model Schedule {
+  id                   String             @id @default(uuid())
+  classId              String             @map("class_id")
+  lecturerAssignmentId String             @map("lecturer_assignment_id")
+  roomId               String             @map("room_id")
+  dayOfWeek            Int                @map("day_of_week") // 1 = Senin, 2 = Selasa, ..., 7 = Minggu
+  plannedStartTime     String             @map("planned_start_time") // HH:mm format
+  plannedEndTime       String             @map("planned_end_time")   // HH:mm format
+
+  class              Class              @relation(fields: [classId], references: [id], onDelete: Cascade)
+  lecturerAssignment LecturerAssignment @relation(fields: [lecturerAssignmentId], references: [id], onDelete: Cascade)
+  room               Room               @relation(fields: [roomId], references: [id])
+  attendanceSessions AttendanceSession[]
+
+  @@map("schedules")
+}
+
+// -------------------------------------------------------------
+// 17. attendance_sessions
+// -------------------------------------------------------------
+model AttendanceSession {
+  id                   String             @id @default(uuid())
+  classId              String             @map("class_id")
+  lecturerAssignmentId String             @map("lecturer_assignment_id")
+  scheduleId           String?            @map("schedule_id")
+  meetingNumber        Int                @map("meeting_number")
+  sessionDate          DateTime           @map("session_date")
+  plannedStartAt       DateTime           @map("planned_start_at")
+  plannedEndAt         DateTime           @map("planned_end_at")
+  actualStartAt        DateTime?          @map("actual_start_at")
+  actualEndAt          DateTime?          @map("actual_end_at")
+  attendanceOpenAt     DateTime?          @map("attendance_open_at")
+  attendanceCloseAt    DateTime?          @map("attendance_close_at")
+  lateToleranceMinutes Int                @default(15) @map("late_tolerance_minutes")
+  creditsSks           Int                @map("credits_sks")
+  qrIntervalSeconds    Int                @default(5) @map("qr_interval_seconds")
+  status               String             @default("SCHEDULED") // DRAFT, SCHEDULED, OPEN, PAUSED, CLOSED, CANCELLED
+  topic                String
+  cancellationReason   String?            @map("cancellation_reason")
+  createdBy            String             @map("created_by")
+  createdAt            DateTime           @default(now()) @map("created_at")
+  updatedAt            DateTime           @updatedAt @map("updated_at")
+
+  class              Class              @relation(fields: [classId], references: [id])
+  lecturerAssignment LecturerAssignment @relation(fields: [lecturerAssignmentId], references: [id])
+  schedule           Schedule?          @relation(fields: [scheduleId], references: [id])
+  creator            User               @relation("CreatedSessions", fields: [createdBy], references: [id])
+
+  qrTokens           AttendanceQrToken[]
+  records            AttendanceRecord[]
+  realization        LectureRealization?
+  evaluations        CourseEvaluation[]
+
+  @@index([classId, sessionDate])
+  @@index([status])
+  @@map("attendance_sessions")
+}
+
+// -------------------------------------------------------------
+// 18. attendance_qr_tokens
+// -------------------------------------------------------------
+model AttendanceQrToken {
+  id         String    @id @default(uuid())
+  sessionId  String    @map("session_id")
+  tokenHash  String    @map("token_hash")
+  issuedAt   DateTime  @map("issued_at")
+  expiresAt  DateTime  @map("expires_at")
+  revokedAt  DateTime? @map("revoked_at")
+  createdAt  DateTime  @default(now()) @map("created_at")
+
+  session AttendanceSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, expiresAt])
+  @@map("attendance_qr_tokens")
+}
+
+// -------------------------------------------------------------
+// 19. attendance_records
+// -------------------------------------------------------------
+model AttendanceRecord {
+  id         String    @id @default(uuid())
+  sessionId  String    @map("session_id")
+  studentId  String    @map("student_id")
+  status     String    @default("ALPA") // HADIR, TERLAMBAT, IZIN, SAKIT, ALPA
+  scannedAt  DateTime? @map("scanned_at")
+  recordedAt DateTime  @default(now()) @map("recorded_at")
+  source     String    @default("QR_SCAN") // QR_SCAN, MANUAL_ENTRY, SYSTEM_RECONCILE, CORRECTION
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+
+  session AttendanceSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  student Student           @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  statusHistories AttendanceStatusHistory[]
+  correctionLogs  AttendanceCorrectionLog[]
+  correctionRequests AttendanceCorrectionRequest[]
+
+  @@unique([sessionId, studentId])
+  @@index([sessionId, status])
+  @@index([studentId])
+  @@map("attendance_records")
+}
+
+// -------------------------------------------------------------
+// 20. attendance_status_history
+// -------------------------------------------------------------
+model AttendanceStatusHistory {
+  id                 String   @id @default(uuid())
+  attendanceRecordId String   @map("attendance_record_id")
+  oldStatus          String   @map("old_status")
+  newStatus          String   @map("new_status")
+  reason             String
+  changedBy          String   @map("changed_by")
+  changedAt          DateTime @default(now()) @map("changed_at")
+
+  attendanceRecord AttendanceRecord @relation(fields: [attendanceRecordId], references: [id], onDelete: Cascade)
+  changer          User             @relation("ChangedBy", fields: [changedBy], references: [id])
+
+  @@map("attendance_status_history")
+}
+
+// -------------------------------------------------------------
+// 21. lecture_realizations
+// -------------------------------------------------------------
+model LectureRealization {
+  id               String   @id @default(uuid())
+  sessionId        String   @unique @map("session_id")
+  actualStartAt    DateTime @map("actual_start_at")
+  actualEndAt      DateTime @map("actual_end_at")
+  topic            String
+  realizationNotes String?  @map("realization_notes")
+  submittedBy      String   @map("submitted_by")
+  submittedAt      DateTime @default(now()) @map("submitted_at")
+
+  session AttendanceSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  submitter User             @relation("SubmittedLectures", fields: [submittedBy], references: [id])
+
+  @@map("lecture_realizations")
+}
+
+// -------------------------------------------------------------
+// 22. attendance_correction_logs
+// -------------------------------------------------------------
+model AttendanceCorrectionLog {
+  id                 String   @id @default(uuid())
+  attendanceRecordId String   @map("attendance_record_id")
+  oldStatus          String   @map("old_status")
+  newStatus          String   @map("new_status")
+  reason             String
+  changedBy          String   @map("changed_by")
+  changedAt          DateTime @default(now()) @map("changed_at")
+
+  attendanceRecord AttendanceRecord @relation(fields: [attendanceRecordId], references: [id], onDelete: Cascade)
+  changer          User             @relation("CorrectionChangedBy", fields: [changedBy], references: [id])
+
+  @@map("attendance_correction_logs")
+}
+
+// -------------------------------------------------------------
+// 23. course_evaluations
+// -------------------------------------------------------------
+model CourseEvaluation {
+  id               String    @id @default(uuid())
+  studyProgramId   String    @map("study_program_id")
+  lecturerId       String    @map("lecturer_id")
+  classId          String    @map("class_id")
+  sessionId        String?   @map("session_id")
+  evaluatorId      String    @map("evaluator_id")
+  evaluationType   String    @map("evaluation_type") // JADWAL_TERLAMBAT, KEHADIRAN_RENDAH, MATERI_BELUM_SESUAI, PERIODIK
+  findings         String
+  followUpDeadline DateTime? @map("follow_up_deadline")
+  status           String    @default("OPEN") // OPEN, IN_REVIEW, RESOLVED, CLOSED
+  createdAt        DateTime  @default(now()) @map("created_at")
+
+  studyProgram StudyProgram       @relation(fields: [studyProgramId], references: [id])
+  lecturer     Lecturer           @relation("LecturerEvaluations", fields: [lecturerId], references: [id])
+  class        Class              @relation(fields: [classId], references: [id])
+  session      AttendanceSession? @relation(fields: [sessionId], references: [id])
+  evaluator    User               @relation("EvaluationsCreated", fields: [evaluatorId], references: [id])
+
+  followUps EvaluationFollowUp[]
+
+  @@map("course_evaluations")
+}
+
+// -------------------------------------------------------------
+// 24. evaluation_follow_ups
+// -------------------------------------------------------------
+model EvaluationFollowUp {
+  id           String   @id @default(uuid())
+  evaluationId String   @map("evaluation_id")
+  response     String
+  submittedBy  String   @map("submitted_by")
+  submittedAt  DateTime @default(now()) @map("submitted_at")
+  status       String   @default("SUBMITTED") // SUBMITTED, ACCEPTED, REJECTED
+
+  evaluation CourseEvaluation @relation(fields: [evaluationId], references: [id], onDelete: Cascade)
+  submitter  User             @relation("FollowUpsSubmitted", fields: [submittedBy], references: [id])
+
+  @@map("evaluation_follow_ups")
+}
+
+// -------------------------------------------------------------
+// 25. audit_logs
+// -------------------------------------------------------------
+model AuditLog {
+  id          String   @id @default(uuid())
+  actorUserId String?  @map("actor_user_id")
+  action      String
+  entityType  String   @map("entity_type")
+  entityId    String   @map("entity_id")
+  reason      String?
+  beforeData  String?  @map("before_data") // JSON serialized
+  afterData   String?  @map("after_data")  // JSON serialized
+  requestId   String?  @map("request_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  actor User? @relation("ActorAuditLogs", fields: [actorUserId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// -------------------------------------------------------------
+// 26. system_settings
+// -------------------------------------------------------------
+model SystemSetting {
+  id           String   @id @default(uuid())
+  settingKey   String   @unique @map("setting_key")
+  settingValue String   @map("setting_value")
+  updatedBy    String?  @map("updated_by")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  updater User? @relation("SettingsUpdated", fields: [updatedBy], references: [id])
+
+  @@map("system_settings")
+}
+
+// -------------------------------------------------------------
+// 27. attendance_correction_requests (Mahasiswa Pengajuan Koreksi)
+// -------------------------------------------------------------
+model AttendanceCorrectionRequest {
+  id                 String    @id @default(uuid())
+  attendanceRecordId String    @map("attendance_record_id")
+  studentUserId      String    @map("student_user_id")
+  requestedStatus    String    @map("requested_status") // HADIR, IZIN, SAKIT
+  reason             String
+  attachmentUrl      String?   @map("attachment_url")
+  status             String    @default("PENDING") // PENDING, APPROVED, REJECTED
+  reviewedBy         String?   @map("reviewed_by")
+  reviewedAt         DateTime? @map("reviewed_at")
+  reviewNotes        String?   @map("review_notes")
+  createdAt          DateTime  @default(now()) @map("created_at")
+
+  record   AttendanceRecord @relation(fields: [attendanceRecordId], references: [id], onDelete: Cascade)
+  student  User             @relation("StudentCorrectionRequests", fields: [studentUserId], references: [id], onDelete: Cascade)
+  reviewer User?            @relation("ReviewedCorrectionRequests", fields: [reviewedBy], references: [id])
+
+  @@map("attendance_correction_requests")
+}

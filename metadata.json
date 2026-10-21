@@ -1,0 +1,10 @@
+{
+  "name": "SIAP-KULIAH",
+  "description": "Sistem Informasi Absensi Perkuliahan Mahasiswa berbasis QR Code Dinamis dan PostgreSQL",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

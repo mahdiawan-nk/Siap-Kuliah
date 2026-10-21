@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cls-web-a",
+    "code": "TIF-3A",
+    "courseId": "crs-web",
+    "semesterId": "sem-2025-2",
+    "studyProgramId": "prodi-ti"
+  },
+  {
+    "id": "cls-db-b",
+    "code": "TIF-3B",
+    "courseId": "crs-db",
+    "semesterId": "sem-2025-2",
+    "studyProgramId": "prodi-ti"
+  }
+]

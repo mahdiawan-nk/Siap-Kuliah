@@ -1,0 +1,12 @@
+[
+  {
+    "id": "room-lab1",
+    "code": "LAB-KOM-1",
+    "name": "Laboratorium Komputer 1 (Gedung D Lantai 2)"
+  },
+  {
+    "id": "room-301",
+    "code": "R-301",
+    "name": "Ruang Kuliah 301 (Gedung C Lantai 3)"
+  }
+]

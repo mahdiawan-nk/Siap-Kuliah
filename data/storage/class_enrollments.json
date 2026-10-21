@@ -1,0 +1,38 @@
+[
+  {
+    "id": "enr-1",
+    "classId": "cls-web-a",
+    "studentId": "stud-1",
+    "enrollmentStatus": "ENROLLED"
+  },
+  {
+    "id": "enr-2",
+    "classId": "cls-web-a",
+    "studentId": "stud-2",
+    "enrollmentStatus": "ENROLLED"
+  },
+  {
+    "id": "enr-3",
+    "classId": "cls-web-a",
+    "studentId": "stud-3",
+    "enrollmentStatus": "ENROLLED"
+  },
+  {
+    "id": "enr-4",
+    "classId": "cls-web-a",
+    "studentId": "stud-4",
+    "enrollmentStatus": "ENROLLED"
+  },
+  {
+    "id": "enr-5",
+    "classId": "cls-db-b",
+    "studentId": "stud-1",
+    "enrollmentStatus": "ENROLLED"
+  },
+  {
+    "id": "enr-6",
+    "classId": "cls-db-b",
+    "studentId": "stud-2",
+    "enrollmentStatus": "ENROLLED"
+  }
+]

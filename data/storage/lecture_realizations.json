@@ -1,0 +1,48 @@
+[
+  {
+    "id": "real-web-1",
+    "sessionId": "sess-web-1",
+    "actualStartAt": "2026-10-14T08:05:00.000Z",
+    "actualEndAt": "2026-10-14T10:30:00.000Z",
+    "topic": "Pengantar Arsitektur Modern Full-Stack & REST API",
+    "realizationNotes": "Materi pengantar disampaikan lancar. Diskusi arsitektur microservices dan monolitik modular.",
+    "submittedBy": "u-dosen-budi",
+    "submittedAt": "2026-10-14T10:35:00.000Z"
+  },
+  {
+    "sessionId": "sess-web-2",
+    "actualStartAt": "2026-10-21T08:00:00.000Z",
+    "actualEndAt": "2026-10-21T17:23:58.920Z",
+    "topic": "Selesai",
+    "realizationNotes": "Sesi perkuliahan selesai dilaksanakan.",
+    "submittedBy": "u-dosen-budi",
+    "submittedAt": "2026-10-21T17:23:58.920Z",
+    "id": "gen-1792603438922-mnur6",
+    "createdAt": "2026-10-21T17:23:58.922Z",
+    "updatedAt": "2026-10-21T17:23:58.922Z"
+  },
+  {
+    "sessionId": "gen-1792603438918-nr1wm",
+    "actualStartAt": "2026-10-21T17:23:58.927Z",
+    "actualEndAt": "2026-10-21T17:23:58.955Z",
+    "topic": "Pengujian Sistem dan Continuous Deployment",
+    "realizationNotes": "Materi pengujian telah selesai dibahas bersama mahasiswa.",
+    "submittedBy": "u-dosen-budi",
+    "submittedAt": "2026-10-21T17:23:58.955Z",
+    "id": "gen-1792603438956-hgq1u",
+    "createdAt": "2026-10-21T17:23:58.956Z",
+    "updatedAt": "2026-10-21T17:23:58.956Z"
+  },
+  {
+    "sessionId": "gen-1792603453777-mfjvf",
+    "actualStartAt": "2026-10-21T17:24:13.780Z",
+    "actualEndAt": "2026-10-21T17:24:13.802Z",
+    "topic": "Pengujian Sistem dan Continuous Deployment",
+    "realizationNotes": "Materi pengujian telah selesai dibahas bersama mahasiswa.",
+    "submittedBy": "u-dosen-budi",
+    "submittedAt": "2026-10-21T17:24:13.802Z",
+    "id": "gen-1792603453803-0ntpn",
+    "createdAt": "2026-10-21T17:24:13.803Z",
+    "updatedAt": "2026-10-21T17:24:13.803Z"
+  }
+]

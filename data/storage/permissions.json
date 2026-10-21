@@ -1,0 +1,82 @@
+[
+  {
+    "id": "perm-1",
+    "code": "users.read",
+    "description": "Melihat data pengguna"
+  },
+  {
+    "id": "perm-2",
+    "code": "users.manage",
+    "description": "Mengelola pengguna"
+  },
+  {
+    "id": "perm-3",
+    "code": "roles.manage",
+    "description": "Mengelola role dan permission"
+  },
+  {
+    "id": "perm-4",
+    "code": "academic_data.read",
+    "description": "Melihat data akademik"
+  },
+  {
+    "id": "perm-5",
+    "code": "academic_data.manage",
+    "description": "Mengelola data akademik"
+  },
+  {
+    "id": "perm-6",
+    "code": "schedules.read",
+    "description": "Melihat jadwal kuliah"
+  },
+  {
+    "id": "perm-7",
+    "code": "sessions.create",
+    "description": "Membuat sesi perkuliahan"
+  },
+  {
+    "id": "perm-8",
+    "code": "sessions.manage_own",
+    "description": "Mengelola sesi milik sendiri"
+  },
+  {
+    "id": "perm-9",
+    "code": "attendance.scan",
+    "description": "Melakukan scan QR absensi"
+  },
+  {
+    "id": "perm-10",
+    "code": "attendance.read_own",
+    "description": "Melihat riwayat absensi pribadi"
+  },
+  {
+    "id": "perm-11",
+    "code": "attendance.read_scope",
+    "description": "Melihat data absensi sesuai prodi/kelas"
+  },
+  {
+    "id": "perm-12",
+    "code": "attendance.correct_own_scope",
+    "description": "Koreksi status absensi kelas sendiri"
+  },
+  {
+    "id": "perm-13",
+    "code": "reports.read_scope",
+    "description": "Melihat laporan sesuai lingkup prodi/kelas"
+  },
+  {
+    "id": "perm-14",
+    "code": "evaluations.create",
+    "description": "Membuat evaluasi perkuliahan"
+  },
+  {
+    "id": "perm-15",
+    "code": "evaluations.read_scope",
+    "description": "Melihat evaluasi lingkup prodi"
+  },
+  {
+    "id": "perm-16",
+    "code": "audit.read",
+    "description": "Melihat audit trail aktivitas"
+  }
+]

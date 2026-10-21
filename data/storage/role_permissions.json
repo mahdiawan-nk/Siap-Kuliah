@@ -1,0 +1,138 @@
+[
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-1"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-2"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-3"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-4"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-5"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-6"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-7"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-8"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-9"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-10"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-11"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-12"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-13"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-14"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-15"
+  },
+  {
+    "roleId": "role-admin",
+    "permissionId": "perm-16"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-1"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-4"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-6"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-11"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-13"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-14"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-15"
+  },
+  {
+    "roleId": "role-kaprodi",
+    "permissionId": "perm-16"
+  },
+  {
+    "roleId": "role-dosen",
+    "permissionId": "perm-4"
+  },
+  {
+    "roleId": "role-dosen",
+    "permissionId": "perm-6"
+  },
+  {
+    "roleId": "role-dosen",
+    "permissionId": "perm-7"
+  },
+  {
+    "roleId": "role-dosen",
+    "permissionId": "perm-8"
+  },
+  {
+    "roleId": "role-dosen",
+    "permissionId": "perm-11"
+  },
+  {
+    "roleId": "role-dosen",
+    "permissionId": "perm-12"
+  },
+  {
+    "roleId": "role-dosen",
+    "permissionId": "perm-13"
+  },
+  {
+    "roleId": "role-mhs",
+    "permissionId": "perm-6"
+  },
+  {
+    "roleId": "role-mhs",
+    "permissionId": "perm-9"
+  },
+  {
+    "roleId": "role-mhs",
+    "permissionId": "perm-10"
+  }
+]

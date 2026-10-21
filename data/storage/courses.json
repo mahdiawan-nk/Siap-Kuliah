@@ -1,0 +1,23 @@
+[
+  {
+    "id": "crs-web",
+    "code": "TIF-301",
+    "name": "Pemrograman Web Lanjut",
+    "creditsSks": 3,
+    "studyProgramId": "prodi-ti"
+  },
+  {
+    "id": "crs-db",
+    "code": "TIF-302",
+    "name": "Basis Data Terdistribusi",
+    "creditsSks": 3,
+    "studyProgramId": "prodi-ti"
+  },
+  {
+    "id": "crs-rpl",
+    "code": "TIF-303",
+    "name": "Rekayasa Perangkat Lunak",
+    "creditsSks": 3,
+    "studyProgramId": "prodi-ti"
+  }
+]

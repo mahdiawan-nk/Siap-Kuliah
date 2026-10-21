@@ -1,0 +1,14 @@
+[
+  {
+    "id": "asg-web-budi",
+    "classId": "cls-web-a",
+    "lecturerId": "lec-budi",
+    "assignmentType": "PRIMARY"
+  },
+  {
+    "id": "asg-db-siti",
+    "classId": "cls-db-b",
+    "lecturerId": "lec-siti",
+    "assignmentType": "PRIMARY"
+  }
+]

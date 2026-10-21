@@ -1,0 +1,38 @@
+[
+  {
+    "userId": "u-admin",
+    "roleId": "role-admin"
+  },
+  {
+    "userId": "u-kaprodi",
+    "roleId": "role-kaprodi"
+  },
+  {
+    "userId": "u-kaprodi",
+    "roleId": "role-dosen"
+  },
+  {
+    "userId": "u-dosen-budi",
+    "roleId": "role-dosen"
+  },
+  {
+    "userId": "u-dosen-siti",
+    "roleId": "role-dosen"
+  },
+  {
+    "userId": "u-mhs-1",
+    "roleId": "role-mhs"
+  },
+  {
+    "userId": "u-mhs-2",
+    "roleId": "role-mhs"
+  },
+  {
+    "userId": "u-mhs-3",
+    "roleId": "role-mhs"
+  },
+  {
+    "userId": "u-mhs-4",
+    "roleId": "role-mhs"
+  }
+]

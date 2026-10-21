@@ -1,0 +1,15 @@
+[
+  {
+    "id": "req-1",
+    "attendanceRecordId": "rec-4",
+    "studentUserId": "u-mhs-4",
+    "requestedStatus": "SAKIT",
+    "reason": "Surat keterangan dokter rawat jalan terlampir karena demam tinggi pada tanggal 14 Oktober",
+    "attachmentUrl": "/uploads/surat-dokter-rizky.pdf",
+    "status": "PENDING",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "reviewNotes": null,
+    "createdAt": "2026-10-14T12:30:00.000Z"
+  }
+]

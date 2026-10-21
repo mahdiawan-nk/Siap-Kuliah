@@ -1,0 +1,173 @@
+[
+  {
+    "id": "rec-1",
+    "sessionId": "sess-web-1",
+    "studentId": "stud-1",
+    "status": "HADIR",
+    "scannedAt": "2026-10-14T08:12:00.000Z",
+    "recordedAt": "2026-10-14T08:12:00.000Z",
+    "source": "QR_SCAN",
+    "updatedAt": "2026-10-14T08:12:00.000Z"
+  },
+  {
+    "id": "rec-2",
+    "sessionId": "sess-web-1",
+    "studentId": "stud-2",
+    "status": "TERLAMBAT",
+    "scannedAt": "2026-10-14T08:28:00.000Z",
+    "recordedAt": "2026-10-14T08:28:00.000Z",
+    "source": "QR_SCAN",
+    "updatedAt": "2026-10-14T08:28:00.000Z"
+  },
+  {
+    "id": "rec-3",
+    "sessionId": "sess-web-1",
+    "studentId": "stud-3",
+    "status": "IZIN",
+    "scannedAt": null,
+    "recordedAt": "2026-10-14T08:15:00.000Z",
+    "source": "MANUAL_ENTRY",
+    "updatedAt": "2026-10-14T08:15:00.000Z"
+  },
+  {
+    "id": "rec-4",
+    "sessionId": "sess-web-1",
+    "studentId": "stud-4",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-14T08:45:00.000Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-14T08:45:00.000Z"
+  },
+  {
+    "id": "rec-5",
+    "sessionId": "sess-web-2",
+    "studentId": "stud-2",
+    "status": "HADIR",
+    "scannedAt": "2026-10-21T08:08:10.000Z",
+    "recordedAt": "2026-10-21T08:08:10.000Z",
+    "source": "QR_SCAN",
+    "updatedAt": "2026-10-21T08:08:10.000Z"
+  },
+  {
+    "sessionId": "sess-web-2",
+    "studentId": "stud-1",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:23:58.920Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:23:58.920Z",
+    "id": "gen-1792603438924-7cmmi",
+    "createdAt": "2026-10-21T17:23:58.924Z"
+  },
+  {
+    "sessionId": "sess-web-2",
+    "studentId": "stud-3",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:23:58.920Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:23:58.920Z",
+    "id": "gen-1792603438924-d17w0",
+    "createdAt": "2026-10-21T17:23:58.924Z"
+  },
+  {
+    "sessionId": "sess-web-2",
+    "studentId": "stud-4",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:23:58.920Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:23:58.920Z",
+    "id": "gen-1792603438925-5fyte",
+    "createdAt": "2026-10-21T17:23:58.925Z"
+  },
+  {
+    "sessionId": "gen-1792603438918-nr1wm",
+    "studentId": "stud-1",
+    "status": "IZIN",
+    "scannedAt": "2026-10-21T17:23:58.937Z",
+    "recordedAt": "2026-10-21T17:23:58.937Z",
+    "source": "CORRECTION",
+    "updatedAt": "2026-10-21T17:23:58.950Z",
+    "id": "gen-1792603438938-qgrdt",
+    "createdAt": "2026-10-21T17:23:58.938Z"
+  },
+  {
+    "sessionId": "gen-1792603438918-nr1wm",
+    "studentId": "stud-2",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:23:58.955Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:23:58.955Z",
+    "id": "gen-1792603438958-1jwfl",
+    "createdAt": "2026-10-21T17:23:58.958Z"
+  },
+  {
+    "sessionId": "gen-1792603438918-nr1wm",
+    "studentId": "stud-3",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:23:58.955Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:23:58.955Z",
+    "id": "gen-1792603438958-5hafu",
+    "createdAt": "2026-10-21T17:23:58.958Z"
+  },
+  {
+    "sessionId": "gen-1792603438918-nr1wm",
+    "studentId": "stud-4",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:23:58.955Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:23:58.955Z",
+    "id": "gen-1792603438959-fpeik",
+    "createdAt": "2026-10-21T17:23:58.959Z"
+  },
+  {
+    "sessionId": "gen-1792603453777-mfjvf",
+    "studentId": "stud-1",
+    "status": "IZIN",
+    "scannedAt": "2026-10-21T17:24:13.790Z",
+    "recordedAt": "2026-10-21T17:24:13.790Z",
+    "source": "CORRECTION",
+    "updatedAt": "2026-10-21T17:24:13.798Z",
+    "id": "gen-1792603453790-j7wc1",
+    "createdAt": "2026-10-21T17:24:13.790Z"
+  },
+  {
+    "sessionId": "gen-1792603453777-mfjvf",
+    "studentId": "stud-2",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:24:13.802Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:24:13.802Z",
+    "id": "gen-1792603453804-jdrjy",
+    "createdAt": "2026-10-21T17:24:13.804Z"
+  },
+  {
+    "sessionId": "gen-1792603453777-mfjvf",
+    "studentId": "stud-3",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:24:13.802Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:24:13.802Z",
+    "id": "gen-1792603453805-vfwl1",
+    "createdAt": "2026-10-21T17:24:13.805Z"
+  },
+  {
+    "sessionId": "gen-1792603453777-mfjvf",
+    "studentId": "stud-4",
+    "status": "ALPA",
+    "scannedAt": null,
+    "recordedAt": "2026-10-21T17:24:13.802Z",
+    "source": "SYSTEM_RECONCILE",
+    "updatedAt": "2026-10-21T17:24:13.802Z",
+    "id": "gen-1792603453806-anz86",
+    "createdAt": "2026-10-21T17:24:13.806Z"
+  }
+]

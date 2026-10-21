@@ -1,0 +1,15 @@
+[
+  {
+    "id": "eval-1",
+    "studyProgramId": "prodi-ti",
+    "lecturerId": "lec-budi",
+    "classId": "cls-web-a",
+    "sessionId": "sess-web-1",
+    "evaluatorId": "u-kaprodi",
+    "evaluationType": "PERIODIK",
+    "findings": "Realisasi pertemuan minggu ke-1 berjalan baik dan tepat waktu. Seluruh bahan ajar telah dibagikan di portal.",
+    "followUpDeadline": "2026-10-30T23:59:59.000Z",
+    "status": "OPEN",
+    "createdAt": "2026-10-15T09:00:00.000Z"
+  }
+]

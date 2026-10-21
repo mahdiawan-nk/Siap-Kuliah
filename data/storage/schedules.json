@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sch-web",
+    "classId": "cls-web-a",
+    "lecturerAssignmentId": "asg-web-budi",
+    "roomId": "room-lab1",
+    "dayOfWeek": 2,
+    "plannedStartTime": "08:00",
+    "plannedEndTime": "10:30"
+  },
+  {
+    "id": "sch-db",
+    "classId": "cls-db-b",
+    "lecturerAssignmentId": "asg-db-siti",
+    "roomId": "room-301",
+    "dayOfWeek": 3,
+    "plannedStartTime": "13:00",
+    "plannedEndTime": "15:30"
+  }
+]

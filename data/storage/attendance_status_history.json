@@ -1,0 +1,33 @@
+[
+  {
+    "id": "hist-1",
+    "attendanceRecordId": "rec-3",
+    "oldStatus": "ALPA",
+    "newStatus": "IZIN",
+    "reason": "Surat izin dispensasi delegasi lomba karya tulis",
+    "changedBy": "u-dosen-budi",
+    "changedAt": "2026-10-14T09:00:00.000Z"
+  },
+  {
+    "attendanceRecordId": "gen-1792603438938-qgrdt",
+    "oldStatus": "HADIR",
+    "newStatus": "IZIN",
+    "reason": "Mahasiswa menyerahkan surat izin dispensasi resmi kegiatan lomba",
+    "changedBy": "u-dosen-budi",
+    "changedAt": "2026-10-21T17:23:58.950Z",
+    "id": "gen-1792603438952-zw1n1",
+    "createdAt": "2026-10-21T17:23:58.952Z",
+    "updatedAt": "2026-10-21T17:23:58.952Z"
+  },
+  {
+    "attendanceRecordId": "gen-1792603453790-j7wc1",
+    "oldStatus": "HADIR",
+    "newStatus": "IZIN",
+    "reason": "Mahasiswa menyerahkan surat izin dispensasi resmi kegiatan lomba",
+    "changedBy": "u-dosen-budi",
+    "changedAt": "2026-10-21T17:24:13.796Z",
+    "id": "gen-1792603453799-lpu5k",
+    "createdAt": "2026-10-21T17:24:13.799Z",
+    "updatedAt": "2026-10-21T17:24:13.799Z"
+  }
+]

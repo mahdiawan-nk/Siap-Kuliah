@@ -1,0 +1,46 @@
+[
+  {
+    "sessionId": "gen-1792603438918-nr1wm",
+    "tokenHash": "b1748d06049f14d7c58321665f5a843808553faca24b9a45e76d33a752922553",
+    "tokenPlain": "SIAP:gen-1792603438918-nr1wm:1792603438929:5d91560c5d936f6447919f5d130ae696:693357551fe3e918b8cc5c5da6e479365af5eba402d8c87657e31dbbf7488093",
+    "issuedAt": "2026-10-21T17:23:58.929Z",
+    "expiresAt": "2026-10-21T17:24:08.929Z",
+    "revokedAt": "2026-10-21T17:23:58.932Z",
+    "createdAt": "2026-10-21T17:23:58.929Z",
+    "id": "gen-1792603438930-88rto",
+    "updatedAt": "2026-10-21T17:23:58.933Z"
+  },
+  {
+    "sessionId": "gen-1792603438918-nr1wm",
+    "tokenHash": "c547b531f6011e5c060295bd3cab610018d7b576189237005451a8b159db0282",
+    "tokenPlain": "SIAP:gen-1792603438918-nr1wm:1792603438932:6f80719ec3df44a09b24496cf4861beb:6a5e679014451e93d15039c1114709be5892f75053d0b6c3cb567e80df2eaca0",
+    "issuedAt": "2026-10-21T17:23:58.932Z",
+    "expiresAt": "2026-10-21T17:24:08.932Z",
+    "revokedAt": null,
+    "createdAt": "2026-10-21T17:23:58.932Z",
+    "id": "gen-1792603438934-3snqk",
+    "updatedAt": "2026-10-21T17:23:58.934Z"
+  },
+  {
+    "sessionId": "gen-1792603453777-mfjvf",
+    "tokenHash": "cc9f5957ad5716932104cb4b613662712fbbe91e7ac5983e293050f392abb781",
+    "tokenPlain": "SIAP:gen-1792603453777-mfjvf:1792603453782:de939f856bdc1aadd254b30e1109c109:8c4d0ed709296122a545e0db43ddd7ef7453044de49ad8fd814f92b2dee8be0c",
+    "issuedAt": "2026-10-21T17:24:13.782Z",
+    "expiresAt": "2026-10-21T17:24:23.782Z",
+    "revokedAt": "2026-10-21T17:24:13.785Z",
+    "createdAt": "2026-10-21T17:24:13.782Z",
+    "id": "gen-1792603453783-qvwqk",
+    "updatedAt": "2026-10-21T17:24:13.786Z"
+  },
+  {
+    "sessionId": "gen-1792603453777-mfjvf",
+    "tokenHash": "aaf3bc684c4a27ea41e73024f19e52ff207a64a9cbb31a4c2f9b37ee76c94a55",
+    "tokenPlain": "SIAP:gen-1792603453777-mfjvf:1792603453785:04e9e4d908f4657668d7c50070b3b1e5:7fd679bc2d174c8985a0d7601046fb124e872f6b816093283136bc4dbcb84400",
+    "issuedAt": "2026-10-21T17:24:13.785Z",
+    "expiresAt": "2026-10-21T17:24:23.785Z",
+    "revokedAt": null,
+    "createdAt": "2026-10-21T17:24:13.785Z",
+    "id": "gen-1792603453786-jqu0z",
+    "updatedAt": "2026-10-21T17:24:13.786Z"
+  }
+]

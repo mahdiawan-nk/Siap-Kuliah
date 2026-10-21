@@ -1,0 +1,74 @@
+[
+  {
+    "id": "u-admin",
+    "username": "admin",
+    "passwordHash": "$2b$10$Ge6DSuL0flg/5O3tGE/xkO2bqtImu4cUU5ozWG10CsdtAxzUjiflu",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:24:13.422Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:24:13.422Z"
+  },
+  {
+    "id": "u-kaprodi",
+    "username": "kaprodi.ti",
+    "passwordHash": "$2b$10$Y2g51.amI5OvWrrplvdrzOgcmkQa8swz7URqkTt8Y6.J/znx1aqy6",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:24:13.540Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:24:13.540Z"
+  },
+  {
+    "id": "u-dosen-budi",
+    "username": "dosen.budi",
+    "passwordHash": "$2b$10$4eQoU5sGQeZh41ohzEAsGuuQiyzXOm.iIwnwgv6fuRikhKw9PFKV6",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:24:13.648Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:24:13.650Z"
+  },
+  {
+    "id": "u-dosen-siti",
+    "username": "dosen.siti",
+    "passwordHash": "$2b$10$4eQoU5sGQeZh41ohzEAsGuuQiyzXOm.iIwnwgv6fuRikhKw9PFKV6",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:23:26.118Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  },
+  {
+    "id": "u-mhs-1",
+    "username": "220101001",
+    "passwordHash": "$2b$10$y75YahQEXdRQ3bqDolvyve2sRgs4h1fXF9ErevvJXsx0pVtn93z6W",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:24:13.768Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:24:13.769Z"
+  },
+  {
+    "id": "u-mhs-2",
+    "username": "220101002",
+    "passwordHash": "$2b$10$y75YahQEXdRQ3bqDolvyve2sRgs4h1fXF9ErevvJXsx0pVtn93z6W",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:23:26.118Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  },
+  {
+    "id": "u-mhs-3",
+    "username": "220101003",
+    "passwordHash": "$2b$10$y75YahQEXdRQ3bqDolvyve2sRgs4h1fXF9ErevvJXsx0pVtn93z6W",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:23:26.118Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  },
+  {
+    "id": "u-mhs-4",
+    "username": "220101004",
+    "passwordHash": "$2b$10$y75YahQEXdRQ3bqDolvyve2sRgs4h1fXF9ErevvJXsx0pVtn93z6W",
+    "status": "ACTIVE",
+    "lastLoginAt": "2026-10-21T17:23:26.118Z",
+    "createdAt": "2026-10-21T17:23:26.118Z",
+    "updatedAt": "2026-10-21T17:23:26.118Z"
+  }
+]

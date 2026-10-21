@@ -1,0 +1,14 @@
+[
+  {
+    "id": "prodi-ti",
+    "code": "TIF",
+    "name": "S1 Teknik Informatika",
+    "headLecturerId": "lec-kaprodi"
+  },
+  {
+    "id": "prodi-si",
+    "code": "SIK",
+    "name": "S1 Sistem Informasi",
+    "headLecturerId": null
+  }
+]

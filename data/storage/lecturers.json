@@ -1,0 +1,29 @@
+[
+  {
+    "id": "lec-kaprodi",
+    "userId": "u-kaprodi",
+    "nidn": "0415068001",
+    "nip": "198006152005011001",
+    "fullName": "Dr. Eng. Ahmad Zaki, S.T., M.Kom.",
+    "studyProgramId": "prodi-ti",
+    "employmentStatus": "TETAP"
+  },
+  {
+    "id": "lec-budi",
+    "userId": "u-dosen-budi",
+    "nidn": "0420088502",
+    "nip": "198508202010121003",
+    "fullName": "Dr. Budi Rahardjo, S.Kom., M.T.",
+    "studyProgramId": "prodi-ti",
+    "employmentStatus": "TETAP"
+  },
+  {
+    "id": "lec-siti",
+    "userId": "u-dosen-siti",
+    "nidn": "0411039003",
+    "nip": "199003112015042002",
+    "fullName": "Siti Aminah, S.T., M.Cs.",
+    "studyProgramId": "prodi-ti",
+    "employmentStatus": "TETAP"
+  }
+]

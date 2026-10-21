@@ -1,0 +1,38 @@
+[
+  {
+    "id": "stud-1",
+    "userId": "u-mhs-1",
+    "nim": "220101001",
+    "fullName": "Ahmad Fauzi",
+    "studyProgramId": "prodi-ti",
+    "cohortYear": 2022,
+    "academicStatus": "AKTIF"
+  },
+  {
+    "id": "stud-2",
+    "userId": "u-mhs-2",
+    "nim": "220101002",
+    "fullName": "Dewi Lestari",
+    "studyProgramId": "prodi-ti",
+    "cohortYear": 2022,
+    "academicStatus": "AKTIF"
+  },
+  {
+    "id": "stud-3",
+    "userId": "u-mhs-3",
+    "nim": "220101003",
+    "fullName": "Bambang Pamungkas",
+    "studyProgramId": "prodi-ti",
+    "cohortYear": 2022,
+    "academicStatus": "AKTIF"
+  },
+  {
+    "id": "stud-4",
+    "userId": "u-mhs-4",
+    "nim": "220101004",
+    "fullName": "Rizky Pratama",
+    "studyProgramId": "prodi-ti",
+    "cohortYear": 2022,
+    "academicStatus": "AKTIF"
+  }
+]

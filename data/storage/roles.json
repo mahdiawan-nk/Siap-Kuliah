@@ -1,0 +1,26 @@
+[
+  {
+    "id": "role-admin",
+    "code": "ADMINISTRATOR",
+    "name": "Administrator Sistem",
+    "description": "Akses penuh konfigurasi dan data master"
+  },
+  {
+    "id": "role-kaprodi",
+    "code": "KAPRODI",
+    "name": "Ketua Program Studi",
+    "description": "Monitoring, evaluasi, dan rekap prodi"
+  },
+  {
+    "id": "role-dosen",
+    "code": "DOSEN",
+    "name": "Dosen Pengampu",
+    "description": "Pembuatan sesi, QR dinamis, dan koreksi absensi"
+  },
+  {
+    "id": "role-mhs",
+    "code": "MAHASISWA",
+    "name": "Mahasiswa",
+    "description": "Scan QR dan melihat histori kehadiran pribadi"
+  }
+]
